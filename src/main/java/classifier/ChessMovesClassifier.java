@@ -53,6 +53,7 @@ public class ChessMovesClassifier {
         Instance instance = chessMovesInstance.getInstance(dataSet);
 
         System.out.println();
+        System.out.println();
         System.out.print("INSTANCE: ");
         System.out.println(instance);
 
@@ -92,50 +93,52 @@ public class ChessMovesClassifier {
         );
     }
 
+    public ChessMovesInstance generateRandomInstance() {
+        return new ChessMovesInstance(
+                Bkblk.getRandomValue(),
+                Bknwy.getRandomValue(),
+                Bkon8.getRandomValue(),
+                Bkona.getRandomValue(),
+                Bkspr.getRandomValue(),
+                Bkxbq.getRandomValue(),
+                Bkxcr.getRandomValue(),
+                Bkxwp.getRandomValue(),
+                Blxwp.getRandomValue(),
+                Bxqsq.getRandomValue(),
+                Cntxt.getRandomValue(),
+                Dsopp.getRandomValue(),
+                Dwipd.getRandomValue(),
+                Hdchk.getRandomValue(),
+                Katri.getRandomValue(),
+                Mulch.getRandomValue(),
+                Qxmsq.getRandomValue(),
+                R2ar8.getRandomValue(),
+                Reskd.getRandomValue(),
+                Reskr.getRandomValue(),
+                Rimmx.getRandomValue(),
+                Rkxwp.getRandomValue(),
+                Rxmsq.getRandomValue(),
+                Simpl.getRandomValue(),
+                Skach.getRandomValue(),
+                Skewr.getRandomValue(),
+                Skrxp.getRandomValue(),
+                Spcop.getRandomValue(),
+                Stlmt.getRandomValue(),
+                Thrsk.getRandomValue(),
+                Wkcti.getRandomValue(),
+                Wkna8.getRandomValue(),
+                Wknck.getRandomValue(),
+                Wkovl.getRandomValue(),
+                Wkpos.getRandomValue(),
+                Wtoeg.getRandomValue()
+        );
+    }
+
     public List<ChessMovesInstance> generateRandomInstances(int numberOfInstances) {
         List<ChessMovesInstance> randomIntances = new ArrayList<>();
 
         for (int i = 0; i < numberOfInstances; i++) {
-            randomIntances.add(
-                    new ChessMovesInstance(
-                            Bkblk.getRandomValue(),
-                            Bknwy.getRandomValue(),
-                            Bkon8.getRandomValue(),
-                            Bkona.getRandomValue(),
-                            Bkspr.getRandomValue(),
-                            Bkxbq.getRandomValue(),
-                            Bkxcr.getRandomValue(),
-                            Bkxwp.getRandomValue(),
-                            Blxwp.getRandomValue(),
-                            Bxqsq.getRandomValue(),
-                            Cntxt.getRandomValue(),
-                            Dsopp.getRandomValue(),
-                            Dwipd.getRandomValue(),
-                            Hdchk.getRandomValue(),
-                            Katri.getRandomValue(),
-                            Mulch.getRandomValue(),
-                            Qxmsq.getRandomValue(),
-                            R2ar8.getRandomValue(),
-                            Reskd.getRandomValue(),
-                            Reskr.getRandomValue(),
-                            Rimmx.getRandomValue(),
-                            Rkxwp.getRandomValue(),
-                            Rxmsq.getRandomValue(),
-                            Simpl.getRandomValue(),
-                            Skach.getRandomValue(),
-                            Skewr.getRandomValue(),
-                            Skrxp.getRandomValue(),
-                            Spcop.getRandomValue(),
-                            Stlmt.getRandomValue(),
-                            Thrsk.getRandomValue(),
-                            Wkcti.getRandomValue(),
-                            Wkna8.getRandomValue(),
-                            Wknck.getRandomValue(),
-                            Wkovl.getRandomValue(),
-                            Wkpos.getRandomValue(),
-                            Wtoeg.getRandomValue()
-                    )
-            );
+            randomIntances.add(generateRandomInstance());
         }
 
         return Collections.unmodifiableList(randomIntances);
